@@ -34,7 +34,7 @@ public class LoginController {
             modelMap.put("name", name);
             return "list-todo";
         }
-        modelMap.put("ErrorMsg", "Invalid Credentials, please try again");
+        modelMap.put("errorMsg", "Invalid Credentials, please try again");
         return "login";
     }
 

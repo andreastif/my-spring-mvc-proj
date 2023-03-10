@@ -8,7 +8,24 @@
 </head>
 <body>
 <div class="container">
-    <h1>Test list-todo</h1>
+    <h1>Your Todos </h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <action:forEach items="${todos}" var="todo">
+            <tr>
+                <td>${todo.id}</td>
+
+            </tr>
+        </action:forEach>
+        </tbody>
+    </table>
+    <a href="add-todo" class="btn btn-success">Add Todo</a>
 </div>
 
 <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>

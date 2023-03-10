@@ -9,6 +9,22 @@
 <body>
 <div class="container">
     <h1>test add-todo</h1>
+
+    <form method="post">
+        <label for="description" class="form-label">Description:</label>
+        <input type="text" name="description" id="description" class="form-control-sm">
+
+        <label for="targetDate" class="form-label">Finished by:</label>
+        <input type="date" name="targetDate" id="targetDate" class="form-control-sm">
+
+        <label for="isDone" class="form-label">Done?</label>
+        <select class="form-select" type="boolean" name="done" id="isDone">
+            <option>true</option>
+            <option>false</option>
+        </select>
+
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+    </form>
 </div>
 
 <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
