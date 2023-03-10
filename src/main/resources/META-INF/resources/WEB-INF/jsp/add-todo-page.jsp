@@ -15,6 +15,7 @@
     <%--@elvariable id="todo" type="Todo"--%>
     <form:form method="post" modelAttribute="todo">
 
+
         <form:input type="hidden"
                     path="name"
         />
@@ -22,17 +23,18 @@
         Todo Name: <form:input type="text"
                                path="todoName"
                                required="required"
-    />
+    /> <form:errors path="todoName" cssClass="text-warning"/>
 
         Todo Description: <form:input type="text"
                                       path="description"
                                       required="required"
                                       cssClass="form-control-sm"
-    />
+    /> <form:errors path="description" cssClass="text-warning"/>
+
         Todo Target Date: <form:input type="date"
                                       path="targetDate"
                                       required="required"
-    />
+    /> <form:errors path="targetDate" cssClass="text-warning"/>
 
         Todo finished: <form:input
                                 type="hidden"
