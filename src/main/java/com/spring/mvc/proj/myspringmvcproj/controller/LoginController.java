@@ -22,7 +22,7 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginLanding() {
-        return "login";
+        return "login-page";
     }
 
     //Fake authentication, just for illustration purposes
@@ -32,10 +32,10 @@ public class LoginController {
                         ModelMap modelMap) {
         if (loginAuthenticationService.authenticate(name, password)) {
             modelMap.put("name", name);
-            return "list-todo";
+            return "redirect:list-todos"; //anropar TodoControllerns listAllTodos("/list-todos") mha redirect:/URL
         }
         modelMap.put("errorMsg", "Invalid Credentials, please try again");
-        return "login";
+        return "login-page";
     }
 
 }

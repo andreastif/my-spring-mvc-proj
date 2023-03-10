@@ -22,7 +22,7 @@ public class TodoController {
     public String listAllTodos(ModelMap modelMap) {
         var todoList = todoRepository.findAll();
         modelMap.addAttribute("todoList", todoList);
-        return "list-todo";
+        return "list-todo-page";
     }
 
 
