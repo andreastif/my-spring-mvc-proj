@@ -1,3 +1,5 @@
+<%@ taglib prefix="action" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +14,24 @@
     <table class="table">
         <thead>
         <tr>
-            <th>id</th>
+            <th>Todo id</th>
+            <th>Who</th>
+            <th>What</th>
+            <th>Description</th>
+            <th>Finished by</th>
+            <th>Is done</th>
 
         </tr>
         </thead>
         <tbody>
-        <action:forEach items="${todos}" var="todo">
+        <action:forEach items="${todoList}" var="Todo">
             <tr>
-                <td>${todo.id}</td>
-
+                <td>${Todo.id}</td>
+                <td>${Todo.name}</td>
+                <td>${Todo.todo}</td>
+                <td>${Todo.description}</td>
+                <td>${Todo.targetDate}</td>
+                <td>${Todo.done}</td>
             </tr>
         </action:forEach>
         </tbody>
