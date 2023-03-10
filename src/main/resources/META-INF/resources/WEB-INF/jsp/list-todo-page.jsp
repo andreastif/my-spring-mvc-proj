@@ -28,7 +28,7 @@
             <tr>
                 <td>${Todo.id}</td>
                 <td>${Todo.name}</td>
-                <td>${Todo.todo}</td>
+                <td>${Todo.todoName}</td>
                 <td>${Todo.description}</td>
                 <td>${Todo.targetDate}</td>
                 <td>${Todo.done}</td>

@@ -1,6 +1,8 @@
 package com.spring.mvc.proj.myspringmvcproj.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
@@ -15,10 +17,13 @@ public class Todo {
     private String name;
 
     @Column
-    private String todo;
+    @Size(min = 1, message = "Please fill out your Todo with at least 1 or more characters")
+    private String todoName;
     @Column
+    @Size(min = 1, message = "Please fill out your Todo with at least 1 or more characters")
     private String description;
     @Column
+    @NotNull(message = "Please enter a valid date")
     private LocalDate targetDate;
     @Column
     private boolean done;
@@ -26,20 +31,12 @@ public class Todo {
     public Todo() {
     }
 
-    public Todo(String name, String todo, String description, LocalDate targetDate, boolean done) {
+    public Todo(String name, String todoName, String description, LocalDate targetDate, boolean done) {
         this.name = name;
-        this.todo = todo;
+        this.todoName = todoName;
         this.description = description;
         this.targetDate = targetDate;
         this.done = done;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public long getId() {
@@ -50,12 +47,20 @@ public class Todo {
         this.id = id;
     }
 
-    public String getTodo() {
-        return todo;
+    public String getName() {
+        return name;
     }
 
-    public void setTodo(String todo) {
-        this.todo = todo;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTodoName() {
+        return todoName;
+    }
+
+    public void setTodoName(String todoName) {
+        this.todoName = todoName;
     }
 
     public String getDescription() {
@@ -100,7 +105,7 @@ public class Todo {
         return "Todo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", todo='" + todo + '\'' +
+                ", todo='" + todoName + '\'' +
                 ", description='" + description + '\'' +
                 ", targetDate=" + targetDate +
                 ", done=" + done +

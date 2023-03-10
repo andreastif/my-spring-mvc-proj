@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="action" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,23 +10,38 @@
 </head>
 <body>
 <div class="container">
-    <h1>test add-todo</h1>
+    <h1>Welcome ${name}, add your new Todo!</h1>
 
-    <form method="post">
-        <label for="description" class="form-label">Description:</label>
-        <input type="text" name="description" id="description" class="form-control-sm">
+    <%--@elvariable id="todo" type="Todo"--%>
+    <form:form method="post" modelAttribute="todo">
 
-        <label for="targetDate" class="form-label">Finished by:</label>
-        <input type="date" name="targetDate" id="targetDate" class="form-control-sm">
+        <form:input type="hidden"
+                    path="name"
+        />
 
-        <label for="isDone" class="form-label">Done?</label>
-        <select class="form-select" type="boolean" name="done" id="isDone">
-            <option>true</option>
-            <option>false</option>
-        </select>
+        Todo Name: <form:input type="text"
+                               path="todoName"
+                               required="required"
+    />
+
+        Todo Description: <form:input type="text"
+                                      path="description"
+                                      required="required"
+                                      cssClass="form-control-sm"
+    />
+        Todo Target Date: <form:input type="date"
+                                      path="targetDate"
+                                      required="required"
+    />
+
+        Todo finished: <form:input
+                                type="hidden"
+                                path="done"
+                                cssClass="form-check-label"
+    />
 
         <button type="submit" class="btn btn-outline-dark">Submit</button>
-    </form>
+    </form:form>
 </div>
 
 <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
