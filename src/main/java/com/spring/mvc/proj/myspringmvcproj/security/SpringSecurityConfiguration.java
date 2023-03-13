@@ -19,7 +19,6 @@ public class SpringSecurityConfiguration {
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
-
         //two users that are valid to log in with
         UserDetails userDetails1 = createNewUser("Andreas", "Dummy");
         UserDetails userDetails2 = createNewUser("Diana", "DummyDummy");

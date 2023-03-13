@@ -1,6 +1,7 @@
 package com.spring.mvc.proj.myspringmvcproj.controller;
 
 import com.spring.mvc.proj.myspringmvcproj.entity.Todo;
+import com.spring.mvc.proj.myspringmvcproj.service.SpringSecurityService;
 import com.spring.mvc.proj.myspringmvcproj.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +20,24 @@ import java.util.List;
 public class TodoController {
 
     private final TodoService todoService;
+    private final SpringSecurityService springSecurityService;
 
     @Autowired
-    public TodoController(TodoService todoService) {
+    public TodoController(TodoService todoService, SpringSecurityService springSecurityService) {
         this.todoService = todoService;
+        this.springSecurityService = springSecurityService;
     }
 
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listAllTodos(ModelMap modelMap) {
-        List<Todo> todoList = todoService.getAllTodosByName(getLoggedInUsername());
+        List<Todo> todoList = todoService.getAllTodosByName(springSecurityService.getLoggedInUsername());
         modelMap.addAttribute("todoList", todoList);
         return "list-todo-page";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
     public String goToAddTodo(ModelMap modelMap) {
-        String username = getLoggedInUsername();
+        String username = springSecurityService.getLoggedInUsername();
         Todo todo = new Todo(username, "", "", LocalDate.now(), false);
         modelMap.put("todo", todo);
         return "add-todo-page";
@@ -45,7 +48,7 @@ public class TodoController {
         if (result.hasErrors()) {
             return "add-todo-page";
         }
-        String username = getLoggedInUsername();
+        String username = springSecurityService.getLoggedInUsername();
         todoService.save(new Todo(username, todo.getTodoName(), todo.getDescription(), todo.getTargetDate(), todo.isDone()));
         return "redirect:list-todos";
     }
@@ -65,14 +68,9 @@ public class TodoController {
 
     @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
     public String updateTodo(@Valid Todo todo) {
-        todo.setName(getLoggedInUsername());
+        todo.setName(springSecurityService.getLoggedInUsername());
         todoService.save(todo);
         return "redirect:list-todos";
-    }
-
-    private static String getLoggedInUsername() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authentication.getName();
     }
 
 
