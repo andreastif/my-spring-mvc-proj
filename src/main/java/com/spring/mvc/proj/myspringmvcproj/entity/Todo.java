@@ -17,10 +17,10 @@ public class Todo {
     private String name;
 
     @Column
-    @Size(min = 1, message = "Please fill out your Todo with at least 1 or more characters")
+    @Size(min = 1, max = 20, message = "Enter a name between 1-20 characters")
     private String todoName;
     @Column
-    @Size(min = 1, message = "Please fill out your Todo with at least 1 or more characters")
+    @Size(min = 1, max = 50, message = "Enter a description between 1-50 characters")
     private String description;
     @Column
     @NotNull(message = "Please enter a valid date")

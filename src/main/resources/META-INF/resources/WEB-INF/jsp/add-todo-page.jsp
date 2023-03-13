@@ -36,51 +36,54 @@
     </div>
 </nav>
 <div class="container">
-    <h1>Add a new Chili <i class="fa-solid fa-pepper-hot"></i> </h1>
+    <h1 class="h1 mt-3">Add a new Chili <i class="fa-solid fa-pepper-hot"></i></h1>
 
     <%--@elvariable id="todo" type="Todo"--%>
     <form:form method="post" modelAttribute="todo">
 
-        <fieldset>
-            <form:input type="hidden"
-                        path="name"
-            />
-        </fieldset>
-
-        <fieldset>
-            <form:label path="todoName">Todo Name: </form:label>
-            <form:input type="text"
-                        path="todoName"
-                        required="required"/>
-            <form:errors path="todoName" cssClass="text-warning"/>
-        </fieldset>
-
-        <fieldset>
-            <form:label path="description">Todo Description: </form:label>
-            <form:input type="text"
-                        path="description"
-                        required="required"
-                        cssClass="form-control-sm"/>
-            <form:errors path="description" cssClass="text-warning"/>
-        </fieldset>
-
-        <fieldset>
-            <form:label path="targetDate">Todo Target Date:</form:label>
-            <form:input type="date"
-                        path="targetDate"
-                        required="required"/>
-            <form:errors path="targetDate" cssClass="text-warning"/>
-        </fieldset>
-
-        <fieldset>
-            <form:label path="done"></form:label>
-            <form:input
-                    type="hidden"
-                    path="done"
-                    cssClass="form-check-label"/>
-        </fieldset>
-
-        <button type="submit" class="btn btn-outline-dark">Submit</button>
+        <div class="form-group">
+            <div class="row g-1">
+                <div class="col-auto mt-3">
+                    <fieldset>
+                        <form:label path="todoName" cssClass="col-form-label">Name</form:label>
+                        <form:input type="text"
+                                    path="todoName"
+                                    required="required"
+                                    cssClass="form-control"/>
+                        <form:errors path="todoName" cssClass="text-warning"/>
+                    </fieldset>
+                </div>
+                <div class="row g-1">
+                    <div class="col-auto mt-3">
+                        <fieldset>
+                            <form:label path="description" cssClass="col-form-label">Description</form:label>
+                            <form:input type="text"
+                                        path="description"
+                                        required="required"
+                                        cssClass="form-control"/>
+                            <form:errors path="description" cssClass="text-warning"/>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row g-1">
+                    <div class="col-auto mt-3">
+                        <fieldset>
+                            <form:label path="targetDate" cssClass="col-form-label">Target Date</form:label>
+                            <form:input type="date"
+                                        path="targetDate"
+                                        required="required"
+                                        cssClass="form-control"/>
+                            <form:errors path="targetDate" cssClass="text-warning"/>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-1 mt-3">
+                <div class="col-auto mt-3">
+                    <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </div>
+            </div>
+        </div>
     </form:form>
 </div>
 
