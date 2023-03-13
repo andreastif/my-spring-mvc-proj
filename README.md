@@ -1,6 +1,8 @@
 # my-spring-mvc-proj
 A spring MVC project with Todos and CRUD.
-Here are some screenshots since this makes use of the now deprecated tech JSP
+Makes use of H2 In Memory DB, Springframework 6, Spring Boot 3, MVC (JSP), BootStrap 5, JPA
+
+Some screenshots!
 
 ![image](https://user-images.githubusercontent.com/45339645/224807242-88b7bf37-34e1-4ede-8668-6741b73e6c0b.png)
 ![image](https://user-images.githubusercontent.com/45339645/224807346-e442b492-7dad-436d-8e7a-fcda70b2382f.png)
