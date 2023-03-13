@@ -6,7 +6,10 @@
     <meta charset="UTF-8"/>
     <link href="webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <title>Update Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap" rel="stylesheet">
+    <title>Update Chili</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-body-tertiary">
@@ -97,11 +100,14 @@
                 <button type="submit" class="btn btn-outline-dark">Submit</button>
             </div>
         </div>
-    </form:form>
-</div>
+        </form:form>
+    </div>
+    <footer class="d-flex pt-3 justify-content-center navbar-light bg-light fixed-bottom">
+        <p class="text-muted">&copy; 2023 Andreas Tiflidis</p>
+    </footer>
 
-<script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/a96db4626a.js" crossorigin="anonymous"></script>
+    <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a96db4626a.js" crossorigin="anonymous"></script>
 </body>
 </html>
