@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Simple-Todo</a>
+        <a class="navbar-brand" href="#">Chili <i class="fa-solid fa-pepper-hot"></i> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/list-todos">My Chilies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">To-do's</a>
+                    <a class="nav-link" href="/add-todo">Add Chili</a>
                 </li>
             </ul>
             <div class="float-right">
@@ -50,5 +50,6 @@
 
 <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
 <script src="webjars/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/a96db4626a.js" crossorigin="anonymous"></script>
 </body>
 </html>
