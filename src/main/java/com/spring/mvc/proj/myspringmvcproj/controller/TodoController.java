@@ -4,6 +4,8 @@ import com.spring.mvc.proj.myspringmvcproj.entity.Todo;
 import com.spring.mvc.proj.myspringmvcproj.service.TodoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -32,18 +34,18 @@ public class TodoController {
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
     public String goToAddTodo(ModelMap modelMap) {
-        String username = (String) modelMap.get("name");
-        Todo todo = new Todo(username, "", "", LocalDate.now().plusYears(99), false);
+        String username = getLoggedInUsername();
+        Todo todo = new Todo(username, "", "", LocalDate.now(), false);
         modelMap.put("todo", todo);
         return "add-todo-page";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
-    public String addNewTodo(ModelMap modelMap, @Valid Todo todo, BindingResult result) {
+    public String addNewTodo(@Valid Todo todo, BindingResult result) {
         if (result.hasErrors()) {
             return "add-todo-page";
         }
-        String username = (String) modelMap.get("name");
+        String username = getLoggedInUsername();
         todoService.save(new Todo(username, todo.getTodoName(), todo.getDescription(), todo.getTargetDate(), todo.isDone()));
         return "redirect:list-todos";
     }
@@ -62,10 +64,15 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/update-todo", method = RequestMethod.POST)
-    public String updateTodo(ModelMap modelMap, @Valid Todo todo) {
-        todo.setName((String) modelMap.get("name"));
+    public String updateTodo(@Valid Todo todo) {
+        todo.setName(getLoggedInUsername());
         todoService.save(todo);
         return "redirect:list-todos";
+    }
+
+    private static String getLoggedInUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
     }
 
 

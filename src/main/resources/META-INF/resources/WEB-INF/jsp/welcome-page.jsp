@@ -23,23 +23,8 @@
     <div class="d-flex justify-content-center" id="logInContainer">
         <div class="row">
             <div class="col-auto logInBox" >
-                <div class="h2 mb-4 mt-6 d-flex justify-content-center">Enter your credentials</div>
-                <div class="form-group d-flex justify-content-center align-content-center mt-4">
-                    <form:form method="post">
-                        <pre id="error-tag">${errorMsg}</pre>
-
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Username" name="name">
-                        </div>
-
-                        <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Password" name="password">
-                        </div>
-
-                        <div class="mb-3 pt-2 d-flex justify-content-center">
-                            <button type="submit" class="btn btn-outline-dark">Log-in</button>
-                        </div>
-                    </form:form>
+                <h1>Welcome to the landing page ${name}!</h1>
+                <a href="list-todos">Manage</a> your todos
                 </div>
             </div>
             <div class="col">
