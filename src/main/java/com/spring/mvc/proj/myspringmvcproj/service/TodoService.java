@@ -33,4 +33,8 @@ public class TodoService {
         return todoRepository.getReferenceById(id);
     }
 
+    public List<Todo> getAllTodosByName(String name) {
+       return todoRepository.findAllByName(name);
+    }
+
 }

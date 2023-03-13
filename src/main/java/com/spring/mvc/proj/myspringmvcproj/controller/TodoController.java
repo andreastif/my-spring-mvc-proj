@@ -27,7 +27,7 @@ public class TodoController {
 
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String listAllTodos(ModelMap modelMap) {
-        List<Todo> todoList = todoService.findAll();
+        List<Todo> todoList = todoService.getAllTodosByName(getLoggedInUsername());
         modelMap.addAttribute("todoList", todoList);
         return "list-todo-page";
     }

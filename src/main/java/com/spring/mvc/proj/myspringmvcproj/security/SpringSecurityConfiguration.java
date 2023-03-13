@@ -19,17 +19,24 @@ public class SpringSecurityConfiguration {
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
+
+        //two users that are valid to log in with
+        UserDetails userDetails1 = createNewUser("Andreas", "Dummy");
+        UserDetails userDetails2 = createNewUser("Diana", "DummyDummy");
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
+
+    private UserDetails createNewUser(String username, String password) {
         //making use of the passwordEncoder() method as a lambda function
         Function<String, String> passwordEncoderFunc = input -> passwordEncoder().encode(input);
-
         //encoding the "dummy" according to password encoder (bcrypt)
         UserDetails userDetails = User.builder()
                 .passwordEncoder(passwordEncoderFunc)
-                .username("Andreas")
-                .password("Dummy")
+                .username(username)
+                .password(password)
                 .roles("USER", "ADMIN") //roles for the person
                 .build();
-        return new InMemoryUserDetailsManager(userDetails);
+        return userDetails;
     }
 
     @Bean

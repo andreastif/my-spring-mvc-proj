@@ -23,5 +23,6 @@ public class DataSeed implements CommandLineRunner {
         todoRepository.save(new Todo("Andreas", "Study", "Learn Reflection", LocalDate.now().plusYears(1), false));
         todoRepository.save(new Todo("Andreas", "Study", "Learn Microservices", LocalDate.now().plusYears(1), false));
         todoRepository.save(new Todo("Andreas", "Study", "Learn TypeScript", LocalDate.now().plusYears(1), false));
+        todoRepository.save(new Todo("Diana", "Study", "Read Bengt Lewenguds Architectural Travels", LocalDate.now().plusYears(1), false));
     }
 }
