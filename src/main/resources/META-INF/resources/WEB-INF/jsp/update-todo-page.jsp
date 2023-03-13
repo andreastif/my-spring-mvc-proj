@@ -4,40 +4,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link href="webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400&display=swap" rel="stylesheet">
+    <%@include file="common/header.jspf" %>
     <title>Update Chili</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Chili <i class="fa-solid fa-pepper-hot"></i> </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/list-todos">My Chilies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/add-todo">Add Chili</a>
-                </li>
-            </ul>
-            <div class="float-right">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
+<%@include file="common/navigation.jspf"%>
 <div class="container">
     <h1 class="h1 mt-3">Update Chili <i class="fa-solid fa-pepper-hot"></i></h1>
 
@@ -102,10 +73,7 @@
         </div>
         </form:form>
     </div>
-    <footer class="d-flex pt-3 justify-content-center navbar-light bg-light fixed-bottom">
-        <p class="text-muted">&copy; 2023 Andreas Tiflidis</p>
-    </footer>
-
+    <%@include file="common/footer.jspf"%>
     <script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
     <script src="webjars/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a96db4626a.js" crossorigin="anonymous"></script>
