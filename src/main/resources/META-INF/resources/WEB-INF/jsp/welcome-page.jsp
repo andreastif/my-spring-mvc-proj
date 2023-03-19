@@ -16,7 +16,7 @@
     <div class="row">
         <div class="d-flex mx-auto justify-content-center">
             <div class="d-inline-flex justify-content-center h1 mt-3 mb-3" id="WelcomeHeader">
-                <p>Welcome to Chili <i class="fa-solid fa-pepper-hot"></i>, ${name}</p>
+                <p>Welcome to Chili <i class="fa-solid fa-pepper-hot"></i> ${name}</p>
             </div>
         </div>
     </div>
