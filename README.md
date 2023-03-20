@@ -1,6 +1,6 @@
 # my-spring-mvc-proj
 A spring MVC project with Todos and CRUD.
-Makes use of H2 In Memory DB, Springframework 6, Spring Boot 3, MVC (JSP), BootStrap 5, JPA, Spring Security
+Makes use of H2 In Memory DB, Springframework 6, Spring Boot 3, MVC (JSP), BootStrap 5, JPA, Spring Security. Deployed through a Docker container and AWS elastic beanstalk.
 
 LIVE DEMO DEPLOYED ON AWS ELASTIC BEANSTALK
 
