@@ -11,6 +11,7 @@
     <groupId>com.spring.mvc.proj</groupId>
     <artifactId>my-spring-mvc-proj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>my-spring-mvc-proj</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -36,7 +37,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
 
         <!--JSTL Dependency Api		-->
         <dependency>
@@ -88,6 +88,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>app</finalName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
