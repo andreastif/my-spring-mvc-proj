@@ -4,7 +4,7 @@ Makes use of H2 In Memory DB, Springframework 6, Spring Boot 3, MVC (JSP), BootS
 
 LIVE DEMO DEPLOYED ON AWS ELASTIC BEANSTALK
 
-http://chilitodo-env.eba-chr9puse.eu-north-1.elasticbeanstalk.com/app/login
+https://tinyurl.com/chilitodoapp
 
 Some screenshots!
 
