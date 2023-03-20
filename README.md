@@ -2,6 +2,10 @@
 A spring MVC project with Todos and CRUD.
 Makes use of H2 In Memory DB, Springframework 6, Spring Boot 3, MVC (JSP), BootStrap 5, JPA, Spring Security
 
+LIVE DEMO DEPLOYED ON AWS ELASTIC BEANSTALK
+
+http://chilitodo-env.eba-chr9puse.eu-north-1.elasticbeanstalk.com/app/login
+
 Some screenshots!
 
 ![image](https://user-images.githubusercontent.com/45339645/224838730-665499cc-6c01-431b-ab8f-40ba8d2be914.png)
